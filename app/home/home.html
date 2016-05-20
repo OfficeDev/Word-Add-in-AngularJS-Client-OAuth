@@ -1,0 +1,23 @@
+<div ng-init="init()">
+    <h2 class="ms-font-l ms-fontColor-neutralSecondary ms-fontWeight-semilight">{{title}}</h2>
+
+    <div ng-hide="isAuthenticated">
+        <h3>Login First</h3>
+        <div>
+            <button ng-click="startLogin()" class="ms-Button ms-Button--primary" id="login-button">
+        <span class="ms-Button-label">Login with Office 365</span>
+        <span class="ms-Button-description">Use your Office 365 credentials to authenticate</span>
+    </button>
+
+        </div>
+    </div>
+
+    <div ng-show="isAuthenticated">
+        You are authenticated as {{userInfo.userName}}
+    </div>
+
+    <div ng-if="meData.displayName">
+        <div>{{meData.displayName}} - {{meData.userPrincipalName}}</div>
+        <div>{{meData.mobilePhone}}</div>
+    </div>
+</div>
