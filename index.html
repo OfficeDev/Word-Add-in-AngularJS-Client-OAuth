@@ -10,33 +10,59 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-sanitize.min.js"></script>
-  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css" rel="stylesheet">
-  <link href="//appsforoffice.microsoft.com/fabric/1.0/fabric.components.min.css" rel="stylesheet">
   <script src="//appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script>
 
 
   <!--<script src="bower_components/adal-angular/lib/adal.js"></script>
   <script src="bower_components/adal-angular/lib/adal-angular.js"></script>-->
-  <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.10/js/adal.min.js"></script>
-  <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.10/js/adal-angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="//secure.aadcdn.microsoftonline-p.com/lib/1.0.10/js/adal.min.js"></script>
+  <script src="//secure.aadcdn.microsoftonline-p.com/lib/1.0.10/js/adal-angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="//appsforoffice.microsoft.com/fabric/2.2.0/fabric.min.css">
+  <link rel="stylesheet" href="//appsforoffice.microsoft.com/fabric/2.2.0/fabric.components.min.css">
 
   <link href="content/app.css" rel="stylesheet" type="text/css" />
+
+
 </head>
 
 <body>
-  <div id="content-main">
-    <div class="padding">
-      <h1 class="ms-font-xxl ms-fontColor-neutralSecondary ms-fontWeight-semilight">Sample</h1>
-
-      <div id="container">
-        <div data-ng-view></div>
+  <main class="ms-landing-page__main">
+    <section class="ms-landing-page__header ms-bgColor-themeLighter">
+      <div class="ms-landing-page__header--center ms-font-m ms-fontWeight-light">
+        <p>
+          <i class="ms-Icon ms-Icon--plus ms-fontColor-themePrimary"></i> Item 1
+        </p>
+        <p>
+          <i class="ms-Icon ms-Icon--plus ms-fontColor-themePrimary"></i> Item 2
+        </p>
       </div>
+      <div class="ms-landing-page__header--right ms-font-m ms-fontWeight-light">
+        <i class="ms-Icon ms-Icon--reactivate ms-fontColor-themePrimary"></i>
+      </div>
+    </section>
+    <section class="ms-landing-page__content ms-font-m ms-fontColor-neutralPrimary">
+      <div id="container" data-ng-view></div>
+    </section>
+  </main>
+  <footer class="ms-landing-page__footer  ms-bgColor-themePrimary">
+    <div class="ms-landing-page__footer--left">
+      <img src="/assets/logo-filled.png" />
+      <h1 class="ms-font-xl ms-fontWeight-semilight ms-fontColor-white">My Add-in Name</h1>
     </div>
-  </div>
+    <div class="ms-landing-page__footer--right">
+      <i class="ms-Icon enlarge ms-Icon--gear ms-fontColor-white"></i>
+    </div>
+  </footer>
+
   <!--<div class="padding">
     <button onclick="window.location.reload()">Reload</button>
   </div>-->
+
+  <!-- Time formatting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.3/angular-moment.min.js"></script>
 
   <script src="scripts/azureADConfig.js"></script>
   <script src="app/app.module.js"></script>

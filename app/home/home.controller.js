@@ -21,6 +21,12 @@
       }, function(error) {
         $scope.meData = {};
       });
+      
+      dataService.getEvents().then(function(data) {
+        $scope.eventsData = data.value;
+      }, function(error) {
+        $scope.eventsData = [];
+      });
     };
 
     $scope.startLogin = function () {

@@ -5,7 +5,8 @@
   var officeAddin = angular.module('officeAddin', [
     'ngRoute',
     'ngSanitize',
-    'AdalAngular'
+    'AdalAngular',
+    'angularMoment' //date time formatting
   ]);
   
   officeAddin.constant('azureADConfig', azureADConfig);
