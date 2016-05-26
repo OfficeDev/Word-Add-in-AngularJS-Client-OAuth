@@ -1,55 +1,37 @@
-<article class="demo-placeholder" ng-if="meData.displayName">
-    <div class="ms-font-xl">Welcome {{meData.displayName}} - {{meData.userPrincipalName}}</div>
-</article>
-<article class="demo-placeholder" ng-if="eventsData">
-    <div class="ms-font-l">Calendar Events</div>
-    <ul class="ms-List" ng-repeat="event in eventsData">
-        <li class="ms-ListItem">
-            <span class="ms-ListItem-primaryText">{{event.subject}}</span>
-            <span class="ms-ListItem-secondaryText">Meeting notes</span>
-            <span class="ms-ListItem-tertiaryText">{{event.bodyPreview}}</span>
-            <span class="ms-ListItem-metaText">{{event.start.dateTime | amCalendar:referenceTime:formats}}</span>
-            <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
-            <!--<div class="ms-ListItem-actions">
-                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
-                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
-                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
-                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
-            </div>-->
-        </li>
-    </ul>
-</article>
-<div ng-hide="isAuthenticated">
-    <article class="demo-placeholder">
-        <div class="demo-placeholder__img"></div>
-        <div class="demo-placeholder__text"></div>
-        <div class="demo-placeholder__text"></div>
-        <div class="demo-placeholder__text"></div>
-        <div class="demo-placeholder__text demo-placeholder__text--half"></div>
-    </article>
-    <article class="demo-placeholder">
-        <div class="demo-placeholder__text"></div>
-        <div class="demo-placeholder__text demo-placeholder__text--half"></div>
-    </article>
-    <article class="demo-placeholder">
-        <div class="demo-placeholder__text"></div>
-        <div class="demo-placeholder__text"></div>
-        <div class="demo-placeholder__text"></div>
-        <div class="demo-placeholder__text demo-placeholder__text--half"></div>
-    </article>
-    <article class="demo-placeholder">
-        <div class="demo-placeholder__text demo-placeholder__text--half"></div>
-        <div class="demo-placeholder__text demo-placeholder__text--para"></div>
-    </article>
-    <article class="demo-placeholder">
-        <div class="demo-placeholder__text demo-placeholder__text--half"></div>
-        <div class="demo-placeholder__text demo-placeholder__text--para"></div>
-    </article>
-    <article class="demo-placeholder" ng-init="init()">
+<div class="ms-font-xl">{{title}}</div>
 
-        <button ng-click="startLogin()" class="ms-Button ms-Button--primary" id="login-button">
-            <span class="ms-Button-label">Login with Office 365</span>
-            <span class="ms-Button-description">Use your Office 365 credentials to authenticate</span>
-        </button>
+<div ng-init="init()">
+    <article class="demo-placeholder" ng-if="meData.displayName">
+        <div class="ms-font-l">
+            Welcome {{meData.displayName}} - {{meData.userPrincipalName}}
+            <button class="ms-Button ms-Button--command" ng-click="logout()"> 
+                <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--lock"></i></span> 
+                <span class="ms-Button-label">Sign out</span> 
+            </button>
+
+        </div>
     </article>
+
+
+    <article class="demo-placeholder">
+        <div class="ms-font-l">Calendar Events</div>
+        <div class="ms-font-s">
+            Events loaded: <span am-time-ago="eventsLoadedOn"></span>
+            <a href="javascript:;" ng-click="loadEvents()"><i class="ms-Icon ms-Icon--refresh" aria-hidden="true"></i></a>
+        </div>
+        <div>
+            <div style="clear:left;margin-top:4px;border-bottom:1px solid;padding-bottom:4px" class="ms-borderColor-purple" ng-repeat="event in eventsData">
+                <div style="float:left; width: 80px;text-align:center;padding-right: 4px">
+                    <div class="ms-font-l ms-fontColor-neutralLighter ms-bgColor-purple">{{event.start.dateTime | amDateFormat:'MMM'}}</div>
+                    <div class="ms-font-xxl ms-fontColor-purple">{{event.start.dateTime | amDateFormat:'DD'}}</div>
+                </div>
+                <div style="margin-left:80px;padding:0 4px;">
+                    <div class="ms-font-m ms-fontWeight-semibold">{{event.subject}}</div>
+                    <div class="ms-font-s-plus">{{event.start.dateTime | amDateFormat:'h:mm a'}}</div>
+                    <div class="ms-font-mi" ng-if="event.bodyPreview">{{event.bodyPreview | limitTo:100 }}</div>
+                </div>
+            </div>
+        </div>
+    </article>
+
 </div>

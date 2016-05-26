@@ -15,13 +15,13 @@ app.constant('azureADConfig', azureADConfig);
 
 app.config(['$routeProvider', '$httpProvider', '$locationProvider', 'adalAuthenticationServiceProvider', 'azureADConfig',
     function ($routeProvider, $httpProvider, $locationProvider, adalProvider, azureADConfig) {
-
-        $routeProvider.when("/home", {
-            controller: "authCtrl",
-            templateUrl: "auth-app/home.html",
+        var logoutRedirectUri = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/Logout.html';
+        $routeProvider.when("/logout", {
+            controller: "logoutCtrl",
+            templateUrl: "auth-app/logout.html",
             requireADLogin: true,
         })
-        .otherwise({ redirectTo: "/home" });
+        .otherwise({ redirectTo: "/logout" });
 
         adalProvider.init({
             clientId: azureADConfig.clientId,
@@ -29,23 +29,18 @@ app.config(['$routeProvider', '$httpProvider', '$locationProvider', 'adalAuthent
             requireADLogin: false,
             endpoints: azureADConfig.endpoints,
             cacheLocation: 'localStorage', 
+            postLogoutRedirectUri: logoutRedirectUri,
         }, $httpProvider);
     }
 ]);
 
-/*
-// Debug logging for ADAL
-Logging.log = function(msg) {
-    console.log(msg);
-};
-Logging.level = 3;
-*/
-
-app.controller('authCtrl', ['$rootScope', '$http', '$scope', 'adalAuthenticationService', '$location', function ($rootScope, $http, $scope, adalService, $location) {
+app.controller('logoutCtrl', ['$rootScope', '$http', '$scope', 'adalAuthenticationService', '$location', function ($rootScope, $http, $scope, adalService, $location) {
     $scope.init = function () {
         //since we set requireADLogin for this route, we are guaranteed to 
         // have a token, but let's double check to be certain
         if (adalService.userInfo.isAuthenticated) {
+            adalService.logOut();
+        } else {
             $scope.completeAuth();
         }
     }

@@ -6,3 +6,10 @@ var azureADConfig = {
         'https://graph.microsoft.com': 'https://graph.microsoft.com'
     }
 };
+
+
+// Debug logging for ADAL
+Logging.log = function(msg) {
+    console.log(msg);
+};
+Logging.level = 3;
