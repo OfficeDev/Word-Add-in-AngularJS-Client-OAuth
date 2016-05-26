@@ -1,6 +1,6 @@
-# Office Add-in Office 365 Client Authentication for Angular.js 
+# Office Add-in Office 365 Client Authentication for AngularJS 
 
-A goal of many Microsoft Office add-ins is to improve user productivity. You can get closer to achieving this goal with the help of third-party services. This sample is a Word add-in demonstrating client-side OAuth using Angular JS and ADAL for Angular. 
+A goal of many Microsoft Office add-ins is to improve user productivity. You can get closer to achieving this goal with the help of third-party services. This sample is a Word add-in demonstrating client-side OAuth using AngularJS and ADAL for Angular. 
 
 ![](http://i.imgur.com/JERzS4n.png)
 
@@ -45,7 +45,7 @@ Save the application, take note of the *client ID*
 
 #### Set up OAuth implicit flow 
 
-For this applications written in AngularJS, Azure AD supports the OAuth 2.0 Implicit Grant flow. The implicit flow is described in the OAuth 2.0 Specification. Its primary benefit is that it allows the app to get tokens from Azure AD without performing a backend server credential exchange. This allows the app to sign in the user, maintain session, and get tokens to other web APIs all within the client JavaScript code. More details can be found on the [Azure AD site](https://azure.microsoft.com/en-us/documentation/articles/active-directory-v2-protocols-implicit/). 
+For this application written in AngularJS, Azure AD supports the OAuth 2.0 Implicit Grant flow. The implicit flow is described in the OAuth 2.0 Specification. Its primary benefit is that it allows the app to get tokens from Azure AD without performing a backend server credential exchange. This allows the app to sign in the user, maintain session, and get tokens to other web APIs all within the client JavaScript code. More details can be found on the [Azure AD site](https://azure.microsoft.com/en-us/documentation/articles/active-directory-v2-protocols-implicit/). 
 
 1. Return to your application Configure page in Azure AD. 
 2. Click **Manage Manifest**, then **Download Manifest**
