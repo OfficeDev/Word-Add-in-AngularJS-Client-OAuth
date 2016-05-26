@@ -1,15 +1,15 @@
-<div class="ms-font-xl">{{title}}</div>
-
 <div ng-init="init()">
     <article class="demo-placeholder" ng-if="meData.displayName">
-        <div class="ms-font-l">
-            Welcome {{meData.displayName}} - {{meData.userPrincipalName}}
+        <div class="ms-font-mi" style="float:right;width:95px">
             <button class="ms-Button ms-Button--command" ng-click="logout()"> 
                 <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--lock"></i></span> 
                 <span class="ms-Button-label">Sign out</span> 
             </button>
-
         </div>
+        <div class="ms-font-l" style="margin-right:100px">
+            {{meData.displayName}} 
+        </div>
+        <div class="ms-font-mi">{{meData.userPrincipalName}}</div>
     </article>
 
 
