@@ -4,7 +4,7 @@ A goal of many Microsoft Office add-ins is to improve user productivity. You can
 
 ![](http://i.imgur.com/JERzS4n.png)
 
-In contrast to [other](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth) [samples](https://github.com/dougperkes/Office-Add-in-AspNetMvc-ServerAuth), this add-in does not require any server-side techniques or web sockets. In Office 2016 we now have the ability to use the dialog framework to pop up a window and communicate back and forth between the pop up window and an Office add-in task pane window.
+In contrast to [other](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth) [samples](https://github.com/dougperkes/Office-Add-in-AspNetMvc-ServerAuth), this add-in does not require any server-side techniques or web sockets. In Office 2016 we now have the ability to use the [dialog framework from the Office UI Namespace](https://dev.office.com/reference/add-ins/shared/officeui) to pop up a window and communicate back and forth between the pop up window and an Office add-in task pane window.
 
 ##Run the add-in
 

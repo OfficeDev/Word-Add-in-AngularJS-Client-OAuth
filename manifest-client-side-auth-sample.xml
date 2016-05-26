@@ -9,6 +9,11 @@
   <Hosts>
     <Host Name="Document"/>
   </Hosts>
+  <Requirements> 
+   <Sets DefaultMinVersion="1.1"> 
+     <Set Name="DialogAPI"/> 
+   </Sets> 
+ </Requirements> 
   <DefaultSettings>
     <SourceLocation DefaultValue="https://localhost:8443/index.html"/>
   </DefaultSettings>
