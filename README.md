@@ -15,13 +15,6 @@ In contrast to [other](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerA
 2. Open a command prompt to the sample directory and run `npm install`.
 3. Have a location to publish you add-in manifest. I prefer using a [network shared folder technique](https://dev.office.com/docs/add-ins/publish/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins).
 
-#### Run the add-in 
-  
-1. At the command prompt run `gulp serve-static`
-2. Open Word, click **My Add-ins**, then select **SHARED FOLDER**. 
-3. Select **Client-Side Auth Sample**, then click **OK**
-4. The task pane will open and you will be able to authenticate with Office 365 credentials in the pop up window.
-
 ### Register your app in Azure
 
 Register a web application in [Azure Management portal](https://manage.windowsazure.com) with the following configuration:
@@ -57,8 +50,14 @@ For this application written in AngularJS, Azure AD supports the OAuth 2.0 Impli
 
 ### Update the client id.
     * Open scripts/azureADConfig.js
-    * Update `clientId: 'd8bd9878-95f3-48a8-80d9-b5484c4b86b4'` with the value from your Azure AD application
+    * Update `clientId: '[Enter your clientId here]'` with the value from your Azure AD application
 
+#### Run the add-in 
+  
+1. At the command prompt run `gulp serve-static`
+2. Open Word, click **My Add-ins**, then select **SHARED FOLDER**. 
+3. Select **Client-Side Auth Sample**, then click **OK**
+4. The task pane will open and you will be able to authenticate with Office 365 credentials in the pop up window.
 
 ## Questions and comments
 
@@ -71,3 +70,7 @@ Questions about Office 365 development in general should be posted to [Stack Ove
 * [More add-in samples](https://github.com/OfficeDev?utf8=%E2%9C%93&query=-add-in)
 * [Office add-ins](http://msdn.microsoft.com/library/office/jj220060.aspx)
 * [Anatomy of an add-in](https://msdn.microsoft.com/library/office/jj220082.aspx#StartBuildingApps_AnatomyofApp)
+
+## Copyright
+
+Copyright (c) 2016 Microsoft Corporation. All rights reserved.

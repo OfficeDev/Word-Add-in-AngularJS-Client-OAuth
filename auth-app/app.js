@@ -1,13 +1,8 @@
-﻿'use strict';
-
-// let's put the azureADConfig in a re-usable place and at the top for easy access
-var azureADConfig = {
-    clientId: 'd8bd9878-95f3-48a8-80d9-b5484c4b86b4',
-    endpoints: {
-        // Map the location of a request to an API to a the identifier of the associated resource
-        'https://graph.microsoft.com': 'https://graph.microsoft.com'
-    }
-};
+﻿/* 
+ * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+ * See LICENSE in the project root for license information.
+ */
+'use strict';
 
 var app = angular.module('authApp', ['ngRoute', 'AdalAngular']);
 
