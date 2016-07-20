@@ -14,6 +14,7 @@ This add-in does not require any server-side techniques or web sockets. In Offic
 1. Ensure that you have the the gulp and bower tools installed. Open a command prompt and run `npm install -g bower gulp`.
 2. Open a command prompt to the sample directory and run `npm install`.
 3. Have a location to publish you add-in manifest. See [Publish your Office Add-in](http://dev.office.com/docs/add-ins/publish/publish).
+4. An Office 365 developer account. If you don't have one, [join the Office 365 Developer Program and get a free 1 year subscription to Office 365](https://aka.ms/devprogramsignup).
 
 ### Register your app in Microsoft Azure
 
