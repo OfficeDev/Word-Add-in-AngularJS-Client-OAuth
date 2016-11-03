@@ -1,14 +1,14 @@
-/* 
+/*
  * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
  * See LICENSE in the project root for license information.
  */
 (function () {
   'use strict';
 
-  angular.module('officeAddin').controller('loginController', ['$scope', '$q', '$location', 'adalAuthenticationService', 
+  angular.module('officeAddin').controller('loginController', ['$scope', '$q', '$location', 'adalAuthenticationService',
   function ($scope, $q, $location, adalService) {
     $scope.title = "Please Login";
-        
+
     $scope.init = function () {
       $scope.isAuthenticated = adalService.userInfo.isAuthenticated;
       $scope.userInfo = adalService.userInfo;
@@ -20,7 +20,7 @@
     $scope.startLogin = function () {
       showLoginPopup("/Auth.html")
         .then(function successCallback(response) {
-          // authentication has succeeded but to get the authenication context for the 
+          // authentication has succeeded but to get the authenication context for the
           // user which is stored in localStorage we need to reload the page.
           window.location.reload();
         }, function errorCallback(response) {
@@ -36,7 +36,7 @@
       var fullUrl = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') +
         url;
       Office.context.ui.displayDialogAsync(fullUrl,
-        { height: 40, width: 40, requireHTTPS: true },
+        { height: 40, width: 40},
         function (result) {
           console.log("dialog has initialized. wiring up events");
           _dlg = result.value;
