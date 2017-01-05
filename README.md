@@ -18,7 +18,8 @@ This add-in does not require any server-side techniques or web sockets. In Offic
 
 ### Register your app in Microsoft Azure
 
-Register a web application in [Azure Management portal](https://manage.windowsazure.com) with the following configuration:
+Register a web application in [Azure Management portal](https://manage.windowsazure.com) with the following configuration: 
+Use [this guide](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-integrating-applications) to register an application.
 
 Parameter | Value
 ---------|--------
