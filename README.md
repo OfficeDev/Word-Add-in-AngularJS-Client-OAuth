@@ -6,8 +6,6 @@ The goal of Office Add-ins is to improve user productivity. You can achieve this
 
 This add-in does not require any server-side techniques or web sockets. In Office 2016 we now have the ability to use the [dialog framework from the Office UI Namespace](https://dev.office.com/reference/add-ins/shared/officeui) to pop up a window and communicate back and forth between the pop up window and an Office Add-in task pane window.
 
-##Run the add-in
-
 #### Set up your environment
 
 1. Clone the GitHub repository.
@@ -52,14 +50,16 @@ For this application written in AngularJS, Azure AD supports the OAuth 2.0 Impli
 
 ### Update the client id
 * Open scripts/azureADConfig.js.
-* Update `clientId: '[Enter your clientId here]'` with the value from your Azure AD application.
+* Update `clientId: '[Insert client ID here]'` with the value from your Azure AD application.
 
 #### Run the add-in 
   
 1. At the command prompt, run `gulp serve-static`.
-2. Open Word, choose **My Add-ins**, then select **SHARED FOLDER**. 
-3. Select **Client-Side Auth Sample**, then choose **OK**.
-4. The task pane will open and you will be able to authenticate with Office 365 credentials in the pop up window.
+2. Open Word, and start a new document.
+3. On the **Insert** ribbon, choose **My Add-ins**, then select **SHARED FOLDER**. 
+3. Select **Client-Side Auth Sample**, then choose **OK**. A new group called **Client Auth** will appear on the **Home** ribbon, with a button named **Open**.
+4. Click the **Open** button. The task pane will open.
+5. Press the **Login to Office 365** button and you will be able to authenticate with Office 365 credentials in the pop up window. Your calendar events will appear in the task pane.
 
 ## Questions and comments
 
