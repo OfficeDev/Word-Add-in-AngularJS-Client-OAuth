@@ -1,0 +1,20 @@
+### YamlMime:Sample
+sample:
+- name: Office Add-in Office 365 Client Authentication for AngularJS
+  path: ''
+  description: The goal of Office Add-ins is to improve user productivity. You can achieve this goal with the help of third-party services. This sample is a Word add-in demonstrating client-side OAuth using AngularJS and ADAL for Angular.
+  readme: ''
+  generateZip: FALSE
+  isLive: TRUE
+  technologies:
+  - Office Add-in
+  - Angular 2.0
+  azureDeploy: ''
+  author: dougperkes
+  platforms: []
+  languages:
+  - JavaScript
+  extensions:
+    products:
+    - Word
+    scenarios: []
